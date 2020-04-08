@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Calculadora</title>
+        <link type="text/css" href="estilo.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div id="calc">
+            <form>
+                <input type="text" id="display" value="" autocomplete="off">
+            </form>
+            <div id="btn">
+                <button onclick="limpar();" style="width: 120px">C</button>
+                <button onclick="numero('/')">/</button>
+                <button onclick="numero('*')">*</button>
+                <br>
+                <button onclick="numero(7)">7</button>
+                <button onclick="numero(8)">8</button>
+                <button onclick="numero(9)">9</button>
+                <button onclick="numero('-')">-</button>
+                <br>
+                <button onclick="numero(4)">4</button>
+                <button onclick="numero(5)">5</button>
+                <button onclick="numero(6)">6</button>
+                <button onclick="numero('+')">+</button>
+                <br>
+                <button onclick="numero(1)">1</button>
+                <button onclick="numero(2)">2</button>
+                <button onclick="numero(3)">3</button>
+                <button onclick="calcular()">=</button>
+                <br>
+                <button onclick="numero(0)" style="width: 184px;">0</button>
+                <button onclick="numero('.')">.</button>
+            </div>
+        </div>
+        
+        <script>
+        
+            function numero(num){
+                
+                var salvo=document.getElementById("display").value; 
+                document.getElementById("display").value = salvo+num;
+                
+            }
+            function calcular(){
+
+                var conta
+                conta=eval(document.getElementById("display").value);
+                document.getElementById("display").value = conta;
+            
+            }
+            
+            function limpar(){
+                
+                document.getElementById("display").value= "";
+                
+            }
+            
+        </script>
+    </body>
+</html>
